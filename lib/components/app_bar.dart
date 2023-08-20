@@ -20,6 +20,7 @@ Row myAppBar() {
               "Username",
               style: TextStyle(
                 fontSize: 20,
+                fontWeight: FontWeight.w800,
               ),
             ),
           )
