@@ -4,6 +4,9 @@ import 'dart:convert';
 
 import '../components/card1.dart';
 import '../components/card2.dart';
+import '../components/card3.dart';
+import '../components/card4.dart';
+import '../components/card5.dart';
 import '../components/glass_cards.dart';
 
 import '../components/app_bar.dart';
@@ -105,28 +108,9 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         card1(),
                         card2(),
-                        Row(
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 30.0,
-                                vertical: 20.0,
-                              ),
-                              child: Text(
-                                "Total repositories  :  ",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              mapDataResponse['reviews'].toString(),
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 14),
-                            )
-                          ],
-                        ),
+                        card3(),
+                        card4(),
+                        card5(),
                       ],
                     ),
                   ],

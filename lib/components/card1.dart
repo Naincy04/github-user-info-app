@@ -7,14 +7,14 @@ Row card1() {
     children: [
       const Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 30.0,
-          vertical: 20.0,
+          horizontal: 35.0,
+          vertical: 25.0,
         ),
         child: Text(
           "Total repositories  :  ",
           style: TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),
