@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import '../pages/home_page.dart';
+import '../../../pages/home_page.dart';
 
-Row card1() {
+Row card5() {
   return Row(
     children: [
       const Padding(
@@ -11,7 +11,7 @@ Row card1() {
           vertical: 25.0,
         ),
         child: Text(
-          "Total repositories  :  ",
+          "Total Stars earned  :  ",
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,

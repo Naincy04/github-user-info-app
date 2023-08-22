@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../components/card1.dart';
-import '../components/card2.dart';
-import '../components/card3.dart';
-import '../components/card4.dart';
-import '../components/card5.dart';
-import '../components/glass_cards.dart';
-
+import '../components/Homepage_components/glassCard1/glasscard_details.dart';
 import '../components/app_bar.dart';
-import '../components/profile_details.dart';
+import '../components/Homepage_components/profile_details.dart';
+import '../components/nav_bar.dart';
 
 String stringResponse = "";
 Map<dynamic, dynamic> mapResponse = {};
@@ -37,13 +32,6 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  @override
-  void initState() {
-    apicall();
-    apicall2();
-    super.initState();
-  }
-
   Future apicall2() async {
     http.Response response;
     response = await http.get(
@@ -59,6 +47,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    apicall();
+    apicall2();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     String imgUrl = "https://github.com/Naincy04.png";
 
@@ -68,55 +63,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             myAppBar(),
             profileDetails(imgUrl),
-            Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 6.0),
-                ),
-                const Text(
-                  "Bio",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  mapResponse['bio'].toString(),
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w400, fontSize: 14),
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                const Text(
-                  "Github stats",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Stack(
-                  children: [
-                    const glassCards(),
-                    Column(
-                      children: [
-                        card1(),
-                        card2(),
-                        card3(),
-                        card4(),
-                        card5(),
-                      ],
-                    ),
-                  ],
-                )
-              ],
-            ),
+            glassCard1(),
           ],
         ),
       ),

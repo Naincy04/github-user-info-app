@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../pages/home_page.dart';
+import '../../../pages/home_page.dart';
 
 Row card4() {
   return Row(

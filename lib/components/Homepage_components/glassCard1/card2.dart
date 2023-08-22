@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
-import '../pages/home_page.dart';
+import '../../../pages/home_page.dart';
 
-Row card5() {
+Row card2() {
   return Row(
     children: [
       const Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 35.0,
-          vertical: 25.0,
+          vertical: 2.0,
         ),
         child: Text(
-          "Total Stars earned  :  ",
+          "Total public gists  :  ",
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -19,7 +19,7 @@ Row card5() {
         ),
       ),
       Text(
-        mapResponse['public_repos'].toString(),
+        mapResponse['public_gists'].toString(),
         style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
       )
     ],

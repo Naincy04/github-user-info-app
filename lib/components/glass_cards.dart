@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 
 import 'glassmorphism.dart';
 
-class glassCards extends StatelessWidget {
-  const glassCards({
+class GlassCards extends StatelessWidget {
+  const GlassCards({
     super.key,
   });
 
@@ -45,20 +45,7 @@ class glassCards extends StatelessWidget {
         const SizedBox(
           height: 360,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20.0,
-            vertical: 480.0,
-          ),
-          child: Glassmorphism(
-            blur: 15,
-            opacity: 0.2,
-            radius: 20,
-            child: Container(
-              height: 200,
-            ),
-          ),
-        ),
+        //
       ],
     );
   }

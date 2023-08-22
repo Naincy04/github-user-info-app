@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
-import '../pages/home_page.dart';
+import '../../../pages/home_page.dart';
 
-Row card2() {
+Row card3() {
   return Row(
     children: [
       const Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 35.0,
-          vertical: 2.0,
+          vertical: 25.0,
         ),
         child: Text(
-          "Total public gists  :  ",
+          "Total commits  :  ",
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -19,7 +19,7 @@ Row card2() {
         ),
       ),
       Text(
-        mapResponse['public_gists'].toString(),
+        mapDataResponse['reviews'].toString(),
         style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
       )
     ],

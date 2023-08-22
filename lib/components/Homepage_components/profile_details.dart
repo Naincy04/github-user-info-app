@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../pages/home_page.dart';
+import '../../pages/home_page.dart';
 
 Row profileDetails(String imgUrl) {
   return Row(
