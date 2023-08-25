@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_user_info_app/components/nav_bar.dart';
 import 'package:github_user_info_app/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,6 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     String name = "";
@@ -44,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   TextFormField(
+                      controller: textController,
                       decoration: const InputDecoration(
                         hintText: "Enter Username",
                         label: Text("Username"),
@@ -55,25 +58,23 @@ class _LoginPageState extends State<LoginPage> {
                         if (value != null && value.isEmpty) {
                           return "Username can't be empty";
                         }
-
                         return null;
                       }),
                   const SizedBox(
                     height: 25.0,
                   ),
                   ElevatedButton(
-                    onPressed: () async {
+                    onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         {
-                          await Future.delayed(
-                            const Duration(seconds: 1),
-                          );
-                          await Navigator.push(
+                          //   await Future.delayed(
+                          //     const Duration(seconds: 1),
+                          //   );
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomePage()),
+                                builder: (context) => const NavBar()),
                           );
-                          setState(() {});
                         }
                       }
                     },

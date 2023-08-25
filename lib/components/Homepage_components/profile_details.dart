@@ -13,7 +13,7 @@ Row profileDetails(String imgUrl) {
         backgroundImage: NetworkImage(imgUrl),
       ),
       const SizedBox(
-        width: 20,
+        width: 15,
       ),
       Column(
         mainAxisAlignment: MainAxisAlignment.start,

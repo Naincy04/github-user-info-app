@@ -5,7 +5,6 @@ import 'dart:convert';
 import '../components/Homepage_components/glassCard1/glasscard_details.dart';
 import '../components/app_bar.dart';
 import '../components/Homepage_components/profile_details.dart';
-import '../components/nav_bar.dart';
 
 String stringResponse = "";
 Map<dynamic, dynamic> mapResponse = {};
@@ -19,10 +18,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final baseUrl = "https://api.github.com/users/";
   Future apicall() async {
     http.Response response;
+
     response = await http.get(
-      Uri.parse("https://api.github.com/users/Naincy04"),
+      Uri.parse(baseUrl + "$name"),
     );
     if (response.statusCode == 200) {
       setState(() {
@@ -32,24 +33,9 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Future apicall2() async {
-    http.Response response;
-    response = await http.get(
-      Uri.parse(
-          "https://github-readme-stats.vercel.app/api?username=Naincy04&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage"),
-    );
-    if (response.statusCode == 200) {
-      setState(() {
-        // stringResponse = response.body;
-        mapDataResponse = json.decode(response.body);
-      });
-    }
-  }
-
   @override
   void initState() {
     apicall();
-    apicall2();
     super.initState();
   }
 

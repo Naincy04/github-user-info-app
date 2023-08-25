@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:github_user_info_app/pages/favRepo_page.dart';
+import 'package:github_user_info_app/pages/trending_page.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
 import '../pages/home_page.dart';
-import '../pages/login_page.dart';
 import '../pages/repos_page.dart';
 
 class NavBar extends StatefulWidget {
@@ -22,23 +23,26 @@ class _NavBarState extends State<NavBar> {
   int _selectedIndex = 0;
   late PageController pageController;
 
-  List<Widget> pages = [
-    const LoginPage(),
+  final List<Widget> pages = [
     const HomePage(),
     const RepoPage(),
+    const FavRepoPage(),
+    const Trending(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_selectedIndex],
+      body: PageView(
+        children: [pages[_selectedIndex]],
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(
           bottom: 11,
         ),
         child: WaterDropNavBar(
           waterDropColor: const Color(0xFFFF7373),
-          backgroundColor: const Color.fromARGB(255, 48, 46, 46),
+          backgroundColor: Color.fromARGB(255, 88, 88, 88),
           barItems: [
             BarItem(
               filledIcon: Icons.home_filled,
@@ -62,6 +66,9 @@ class _NavBarState extends State<NavBar> {
             setState(() {
               _selectedIndex = index;
             });
+            pageController.animateToPage(_selectedIndex,
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeOutQuad);
           },
         ),
       ),
