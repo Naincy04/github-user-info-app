@@ -10,10 +10,8 @@ class Trending extends StatelessWidget {
       children: [
         myAppBar(),
         Column(
-          children: [
-            Container(
-              child: Text("Hello Trending page"),
-            ),
+          children: const [
+            Text("Hello Trending page"),
           ],
         ),
       ],

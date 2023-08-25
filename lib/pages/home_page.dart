@@ -11,7 +11,8 @@ Map<dynamic, dynamic> mapResponse = {};
 Map<dynamic, dynamic> mapDataResponse = {};
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  String name;
+  HomePage({super.key, required this.name});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -19,11 +20,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final baseUrl = "https://api.github.com/users/";
+
   Future apicall() async {
     http.Response response;
 
     response = await http.get(
-      Uri.parse(baseUrl + "$name"),
+      Uri.parse("$baseUrl${widget.name}"),
     );
     if (response.statusCode == 200) {
       setState(() {
@@ -48,6 +50,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             myAppBar(),
+            Text(widget.name),
             profileDetails(imgUrl),
             glassCard1(),
           ],

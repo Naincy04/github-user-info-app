@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:github_user_info_app/components/nav_bar.dart';
 import 'package:github_user_info_app/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,11 +9,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController textController = TextEditingController();
+  final TextEditingController _name = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    String name = "";
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     return Material(
       child: Column(
         children: [
@@ -42,18 +40,15 @@ class _LoginPageState extends State<LoginPage> {
             padding:
                 const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
             child: Form(
-              key: _formKey,
+              key: formKey,
               child: Column(
                 children: [
                   TextFormField(
-                      controller: textController,
+                      controller: _name,
                       decoration: const InputDecoration(
                         hintText: "Enter Username",
                         label: Text("Username"),
                       ),
-                      onChanged: (value) {
-                        name = value;
-                      },
                       validator: (String? value) {
                         if (value != null && value.isEmpty) {
                           return "Username can't be empty";
@@ -65,15 +60,18 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
+                      if (formKey.currentState!.validate()) {
                         {
                           //   await Future.delayed(
                           //     const Duration(seconds: 1),
                           //   );
-                          Navigator.pushReplacement(
-                            context,
+
+                          String uname = _name.text.toString();
+                          Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                                builder: (context) => const NavBar()),
+                                builder: (context) => HomePage(
+                                      name: uname,
+                                    )),
                           );
                         }
                       }

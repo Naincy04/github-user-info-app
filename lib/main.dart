@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:github_user_info_app/components/nav_bar.dart';
 import 'package:github_user_info_app/pages/login_page.dart';
 
 void main() {

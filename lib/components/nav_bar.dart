@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:github_user_info_app/pages/favRepo_page.dart';
+import 'package:github_user_info_app/pages/fav_page.dart';
 import 'package:github_user_info_app/pages/trending_page.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
@@ -7,7 +7,9 @@ import '../pages/home_page.dart';
 import '../pages/repos_page.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+  const NavBar({
+    super.key,
+  });
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -24,7 +26,9 @@ class _NavBarState extends State<NavBar> {
   late PageController pageController;
 
   final List<Widget> pages = [
-    const HomePage(),
+    HomePage(
+      name: 'uname',
+    ),
     const RepoPage(),
     const FavRepoPage(),
     const Trending(),
@@ -42,7 +46,7 @@ class _NavBarState extends State<NavBar> {
         ),
         child: WaterDropNavBar(
           waterDropColor: const Color(0xFFFF7373),
-          backgroundColor: Color.fromARGB(255, 88, 88, 88),
+          backgroundColor: const Color.fromARGB(255, 88, 88, 88),
           barItems: [
             BarItem(
               filledIcon: Icons.home_filled,

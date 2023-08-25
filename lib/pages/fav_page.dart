@@ -10,10 +10,8 @@ class FavRepoPage extends StatelessWidget {
       children: [
         myAppBar(),
         Column(
-          children: [
-            Container(
-              child: const Text("Hello fav repository page"),
-            ),
+          children: const [
+            Text("Hello fav repository page"),
           ],
         ),
       ],
