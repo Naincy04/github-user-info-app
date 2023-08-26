@@ -79,3 +79,58 @@ class _NavBarState extends State<NavBar> {
     );
   }
 }
+
+class HomePage {
+  String stringResponse = "";
+Map<dynamic, dynamic> mapResponse = {};
+Map<dynamic, dynamic> mapDataResponse = {};
+
+class HomePage extends StatefulWidget {
+  String name;
+  HomePage({super.key, required this.name});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final baseUrl = "https://api.github.com/users/";
+
+  Future apicall() async {
+    http.Response response;
+
+    response = await http.get(
+      Uri.parse("$baseUrl${widget.name}"),
+    );
+    if (response.statusCode == 200) {
+      setState(() {
+        // stringResponse = response.body;
+        mapResponse = json.decode(response.body);
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    apicall();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    String imgUrl = "https://github.com/Naincy04.png";
+
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            myAppBar(),
+            Text(widget.name),
+            profileDetails(imgUrl),
+            glassCard1(),
+          ],
+        ),
+      ),
+    );
+  }
+}

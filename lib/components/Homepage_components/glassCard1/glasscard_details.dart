@@ -24,10 +24,10 @@ Column glassCard1() {
       const SizedBox(
         height: 5,
       ),
-      Text(
-        mapResponse['bio'].toString(),
-        style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-      ),
+      // Text(
+      //   mapResponse['bio'].toString(),
+      //   style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+      // ),
       const SizedBox(
         height: 25,
       ),

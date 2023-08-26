@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:github_user_info_app/pages/home_page.dart';
+
+import 'main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -67,11 +68,9 @@ class _LoginPageState extends State<LoginPage> {
                           //   );
 
                           String uname = _name.text.toString();
+
                           Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                                builder: (context) => HomePage(
-                                      name: uname,
-                                    )),
+                            MaterialPageRoute(builder: (context) => MainPage()),
                           );
                         }
                       }
