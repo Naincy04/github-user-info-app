@@ -18,9 +18,9 @@ Row profileDetails(String imgUrl) {
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          // Text(mapResponse['name'].toString(),
-          //     style:
-          //         const TextStyle(fontWeight: FontWeight.w400, fontSize: 25)),
+          Text(mapResponse['name'].toString(),
+              style:
+                  const TextStyle(fontWeight: FontWeight.w400, fontSize: 25)),
           const SizedBox(
             height: 10,
           ),
@@ -35,11 +35,11 @@ Row profileDetails(String imgUrl) {
               ),
               Row(
                 children: [
-                  // Text(
-                  //   mapResponse['followers'].toString(),
-                  //   style: const TextStyle(
-                  //       fontWeight: FontWeight.w400, fontSize: 14),
-                  // ),
+                  Text(
+                    mapResponse['followers'].toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w400, fontSize: 14),
+                  ),
                   const SizedBox(
                     width: 5,
                   ),
@@ -51,11 +51,11 @@ Row profileDetails(String imgUrl) {
               ),
               Row(
                 children: [
-                  // Text(
-                  //   mapResponse['following'].toString(),
-                  //   style: const TextStyle(
-                  //       fontWeight: FontWeight.w400, fontSize: 14),
-                  // ),
+                  Text(
+                    mapResponse['following'].toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w400, fontSize: 14),
+                  ),
                   const SizedBox(
                     width: 5,
                   ),

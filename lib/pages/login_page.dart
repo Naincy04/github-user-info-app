@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'main_page.dart';
+import 'package:github_user_info_app/components/nav_bar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -70,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                           String uname = _name.text.toString();
 
                           Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => MainPage()),
+                            MaterialPageRoute(builder: (context) => NavBar()),
                           );
                         }
                       }

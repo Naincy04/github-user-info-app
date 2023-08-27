@@ -18,10 +18,10 @@ Row card3() {
           ),
         ),
       ),
-      // Text(
-      //   mapDataResponse['reviews'].toString(),
-      //   style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-      // )
+      Text(
+        mapDataResponse['reviews'].toString(),
+        style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+      )
     ],
   );
 }

@@ -18,10 +18,10 @@ Row card5() {
           ),
         ),
       ),
-      // Text(
-      //   mapResponse['public_repos'].toString(),
-      //   style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-      // )
+      Text(
+        mapResponse['public_repos'].toString(),
+        style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+      )
     ],
   );
 }
