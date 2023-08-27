@@ -8,6 +8,7 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String imgUrl = "https://github.com/Naincy04.png";
     return Column(
       children: [
         MyAppBar(
@@ -28,15 +29,35 @@ class AccountPage extends StatelessWidget {
             vertical: 20,
           ),
           child: Glassmorphism(
-              blur: 15,
-              opacity: 0.2,
-              radius: 20,
-              child: Container(
-                height: 460,
-                width: 750,
-              )),
+            blur: 15,
+            opacity: 0.2,
+            radius: 20,
+            child: Container(
+              height: 460,
+              width: 750,
+              child: Column(
+                children: [
+                  const Padding(padding: EdgeInsets.only(top: 13)),
+                  CircleAvatar(
+                    radius: 70,
+                    backgroundImage: NetworkImage(imgUrl),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    "Naincy Kumari",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         Glassmorphism(
@@ -44,8 +65,17 @@ class AccountPage extends StatelessWidget {
             opacity: 0.2,
             radius: 20,
             child: Container(
+              padding: const EdgeInsets.all(20),
               height: 60,
               width: 350,
+              child: const Text(
+                "Submit Feedback",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
             )),
       ],
     );
