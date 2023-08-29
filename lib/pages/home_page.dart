@@ -10,10 +10,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 Map<dynamic, dynamic> mapResponse = {};
 
 class HomePage extends StatefulWidget {
-  final String username;
-  const HomePage({
+  HomePage({
     super.key,
-    required this.username,
   });
 
   @override
@@ -21,14 +19,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String? nameValue;
   // final baseUrl = "https://api.github.com/users/";
 
   Future<void> userdetailscall(String? nameValue) async {
     http.Response response;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    nameValue = prefs.getString('names');
+
+    print(nameValue);
 
     response = await http.get(
-      Uri.parse("https://github.com/users/$nameValue"),
+      Uri.parse("http://api.github.com/users/$nameValue"),
     );
+    print(response.body);
     if (response.statusCode == 200) {
       setState(() {
         mapResponse = json.decode(response.body);
@@ -37,31 +41,29 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
-  void initState() async {
-    // await getNames();
+  void initState() {
+    // getNames();
 
     super.initState();
-    await userdetailscall(widget.username);
+    userdetailscall(nameValue);
   }
 
-  // Future getNames() async {
+  // void getNames() async {
   //   final SharedPreferences prefs = await SharedPreferences.getInstance();
   //   nameValue = prefs.getString('names');
-  //   print(nameValue);
+  //   setState(() {});
   // }
 
   @override
   Widget build(BuildContext context) {
-    // String imgUrl = "https://github.com/$widget.username.png";
+    String imgUrl = "https://github.com/$nameValue.png";
 
     return Scaffold(
       body: Column(
         children: [
           MyAppBar(),
-          widget.username == null
-              ? const Text("No names saved")
-              : Text(widget.username!),
-          // profileDetails(imgUrl),
+          // nameValue == null ? const Text("No names saved") : Text(nameValue!),
+          profileDetails(imgUrl),
           glassCard1(),
         ],
       ),

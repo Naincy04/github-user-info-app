@@ -26,9 +26,7 @@ class _NavBarState extends State<NavBar> {
   late PageController pageController;
 
   final List<Widget> pages = [
-    HomePage(
-      username: 'Naincy04',
-    ),
+    HomePage(),
     const RepoPage(),
     const FavRepoPage(),
     const TrendingPage(),
