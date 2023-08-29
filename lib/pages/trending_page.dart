@@ -43,16 +43,12 @@ class _TrendingPageState extends State<TrendingPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          MyAppBar(
-            name: 'Naincy04',
-          ),
-          Container(
-            child: const Text(
-              "Trending Repositories",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w800,
-              ),
+          const MyAppBar(),
+          const Text(
+            "Trending Repositories",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w800,
             ),
           ),
           Padding(

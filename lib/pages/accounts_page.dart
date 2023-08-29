@@ -11,16 +11,12 @@ class AccountPage extends StatelessWidget {
     String imgUrl = "https://github.com/Naincy04.png";
     return Column(
       children: [
-        MyAppBar(
-          name: 'Naincy04',
-        ),
-        Container(
-          child: const Text(
-            "About",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w800,
-            ),
+        const MyAppBar(),
+        const Text(
+          "About",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w800,
           ),
         ),
         Padding(
@@ -32,7 +28,7 @@ class AccountPage extends StatelessWidget {
             blur: 15,
             opacity: 0.2,
             radius: 20,
-            child: Container(
+            child: SizedBox(
               height: 460,
               width: 750,
               child: Column(

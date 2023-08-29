@@ -24,10 +24,10 @@ Column glassCard1() {
       const SizedBox(
         height: 5,
       ),
-      // Text(
-      //   mapResponse['bio'].toString(),
-      //   style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-      // ),
+      Text(
+        mapResponse['bio'].toString(),
+        style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+      ),
       const SizedBox(
         height: 25,
       ),
@@ -51,27 +51,27 @@ Column glassCard1() {
               card3(),
               card4(),
               card5(),
-              Row(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 35.0,
-                      vertical: 50.0,
-                    ),
-                    child: Text("Total Contributions (2023) : "),
-                  ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 35.0,
-                    ),
-                    child: Text("Longest Streak (Days) : "),
-                  ),
-                ],
-              ),
+              // Row(
+              //   children: const [
+              //     Padding(
+              //       padding: EdgeInsets.symmetric(
+              //         horizontal: 35.0,
+              //         vertical: 50.0,
+              //       ),
+              //       child: Text("Total Contributions (2023) : "),
+              //     ),
+              //   ],
+              // ),
+              // Row(
+              //   children: const [
+              //     Padding(
+              //       padding: EdgeInsets.symmetric(
+              //         horizontal: 35.0,
+              //       ),
+              //       child: Text("Longest Streak (Days) : "),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ],

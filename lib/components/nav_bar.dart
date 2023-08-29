@@ -27,7 +27,7 @@ class _NavBarState extends State<NavBar> {
 
   final List<Widget> pages = [
     HomePage(
-      name: 'uname',
+      username: 'Naincy04',
     ),
     const RepoPage(),
     const FavRepoPage(),

@@ -25,27 +25,6 @@ class GlassCards extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 260,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20.0,
-            vertical: 265.0,
-          ),
-          child: Glassmorphism(
-            blur: 15,
-            opacity: 0.2,
-            radius: 20,
-            child: Container(
-              height: 200,
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 360,
-        ),
-        //
       ],
     );
   }

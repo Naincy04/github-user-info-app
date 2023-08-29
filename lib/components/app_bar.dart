@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyAppBar extends StatefulWidget {
-  String name;
-  MyAppBar({super.key, required this.name});
+  const MyAppBar({super.key});
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
 }
 
 class _MyAppBarState extends State<MyAppBar> {
+  String? nameValue = "";
+
+  void getNames() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    nameValue = prefs.getString('names');
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    getNames();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,7 +42,7 @@ class _MyAppBarState extends State<MyAppBar> {
             Container(
               padding: const EdgeInsets.only(bottom: 0.1, top: 20),
               child: Text(
-                widget.name,
+                nameValue!,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w800,

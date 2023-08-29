@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_user_info_app/components/nav_bar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,6 +10,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   final TextEditingController _name = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -59,17 +65,15 @@ class _LoginPageState extends State<LoginPage> {
                     height: 25.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         {
-                          //   await Future.delayed(
-                          //     const Duration(seconds: 1),
-                          //   );
-
                           String uname = _name.text.toString();
+                          getValue(uname);
 
                           Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => NavBar()),
+                            MaterialPageRoute(
+                                builder: (context) => const NavBar()),
                           );
                         }
                       }
@@ -83,10 +87,6 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 180.0,
                   ),
-                  const Text(
-                    "Made by Naincy",
-                    style: TextStyle(fontSize: 16.0),
-                  ),
                 ],
               ),
             ),
@@ -94,5 +94,10 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  Future<void> getValue(nameValue) async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('names', nameValue);
   }
 }

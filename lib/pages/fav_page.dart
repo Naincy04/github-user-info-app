@@ -11,16 +11,12 @@ class FavRepoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MyAppBar(
-          name: 'Naincy04',
-        ),
-        Container(
-          child: const Text(
-            "Starred Repositories",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w800,
-            ),
+        const MyAppBar(),
+        const Text(
+          "Starred Repositories",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w800,
           ),
         ),
         Column(
