@@ -29,23 +29,18 @@ class AccountPage extends StatelessWidget {
             opacity: 0.2,
             radius: 20,
             child: SizedBox(
-              height: 460,
+              height: MediaQuery.of(context).size.height * 0.3,
               width: 750,
-              child: Column(
+              child: const Column(
                 children: [
-                  const Padding(padding: EdgeInsets.only(top: 13)),
-                  CircleAvatar(
-                    radius: 70,
-                    backgroundImage: NetworkImage(imgUrl),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Text(
-                    "Naincy Kumari",
+                  Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 1)),
+                  Text(
+                    "Dear Users \nThis is a simple app to get the details of a github user. \nYou can get the details of the user by entering the username in the search bar. \nYou can also get the details of the repositories and the starred repositories of the user. \nYou can also submit the feedback of the app. \nHope you like the app. \nThank You.",
                     style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w800,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
