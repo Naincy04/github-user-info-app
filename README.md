@@ -36,6 +36,7 @@ flutter run
 - GitHub API
 
 ## Screenshot
+![Screenshot](https://github.com/Naincy04/github-user-info-app/raw/master/ss.jpeg)
 
 
 
