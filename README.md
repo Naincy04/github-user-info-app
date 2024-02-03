@@ -1,5 +1,6 @@
-GitHub User Info App
-Overview
+# GitHub User Info App
+
+# Overview
 GitHub User Info App is a Flutter-based mobile application that allows users to retrieve detailed information about a GitHub user. By entering a correct username, users can access information such as followers, following, bio, and a list of all repositories associated with the specified GitHub user.
 
 Features
