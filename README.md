@@ -10,16 +10,19 @@ GitHub User Info App is a Flutter-based mobile application that allows users to 
 ## Getting Started
 Follow these steps to get started with the GitHub User Info App:
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-username/github-user-info-app.git
+```bash
+# Clone the Repository
+git clone https://github.com/your-username/github-user-info-app.git
 
+# Navigate to the Project
+cd github-user-info-app
 
+# Install Dependencies
+flutter pub get
 
+# Run the App
+flutter run
 
-Clone the Repository:
-
-bash
 Copy code
 git clone https://github.com/your-username/github-user-info-app.git
 Navigate to the Project:
