@@ -34,3 +34,9 @@ flutter run
 - Flutter
 - Dart
 - GitHub API
+
+## Feedback and Contributions
+Your feedback is valuable! If you encounter issues or have suggestions for improvements, please open an issue.
+
+If you'd like to contribute to the project, feel free to submit a pull request. Contributions are always welcome!
+
