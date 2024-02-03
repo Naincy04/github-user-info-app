@@ -24,3 +24,13 @@ flutter pub get
 flutter run
 
 ```
+1. **Enter GitHub Username:**
+   Open the app, and on the home screen, enter the GitHub username for which you want to retrieve information.
+
+2. **Explore User Details:**
+   View detailed information about the specified GitHub user, including followers, following, bio, and a list of repositories.
+
+## Technologies Used
+- Flutter
+- Dart
+- GitHub API
