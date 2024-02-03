@@ -19,7 +19,7 @@ cd github-user-info-app
 
 # Install Dependencies
 flutter pub get
-
+              
 # Run the App
 flutter run
 
