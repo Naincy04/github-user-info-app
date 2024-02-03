@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:github_user_info_app/pages/login_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyAppBar extends StatefulWidget {
-  const MyAppBar({super.key});
+  const MyAppBar({Key? key});
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
@@ -20,8 +21,19 @@ class _MyAppBarState extends State<MyAppBar> {
   @override
   void initState() {
     getNames();
-
     super.initState();
+  }
+
+  // Logout function
+  void logout() async {
+    print("Exit clicked");
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // Clear user-related data or authentication token
+    prefs.clear();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+    );
   }
 
   @override
@@ -30,6 +42,7 @@ class _MyAppBarState extends State<MyAppBar> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               padding: const EdgeInsets.only(top: 19, bottom: 0.1),
@@ -64,9 +77,10 @@ class _MyAppBarState extends State<MyAppBar> {
               padding: const EdgeInsets.only(right: 15, bottom: 0.1, top: 19),
               width: 95,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: logout,
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFF7373)),
+                  backgroundColor: const Color(0xFFFF7373),
+                ),
                 child: const Text("Exit"),
               ),
             )

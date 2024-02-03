@@ -42,17 +42,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // getNames();
+    getNames();
 
     super.initState();
     userdetailscall(nameValue);
   }
 
-  // void getNames() async {
-  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   nameValue = prefs.getString('names');
-  //   setState(() {});
-  // }
+  void getNames() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    nameValue = prefs.getString('names');
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {

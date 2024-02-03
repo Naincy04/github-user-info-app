@@ -36,7 +36,7 @@ Row profileDetails(String imgUrl) {
               Row(
                 children: [
                   Text(
-                    mapResponse['followers'],
+                    mapResponse['followers'].toString(),
                     style: const TextStyle(
                         fontWeight: FontWeight.w400, fontSize: 14),
                   ),
