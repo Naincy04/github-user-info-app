@@ -1,16 +1,49 @@
-# github_user_info_app
+GitHub User Info App
+Overview
+GitHub User Info App is a Flutter-based mobile application that allows users to retrieve detailed information about a GitHub user. By entering a correct username, users can access information such as followers, following, bio, and a list of all repositories associated with the specified GitHub user.
 
-A new Flutter project.
+Features
+User Details: Fetch detailed information about a GitHub user, including followers, following, and bio.
 
-## Getting Started
+Repository List: View a comprehensive list of all repositories owned by the specified GitHub user.
 
-This project is a starting point for a Flutter application.
+Getting Started
+Follow these steps to get started with the GitHub User Info App:
 
-A few resources to get you started if this is your first Flutter project:
+Clone the Repository:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+bash
+Copy code
+git clone https://github.com/your-username/github-user-info-app.git
+Navigate to the Project:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+bash
+Copy code
+cd github-user-info-app
+Install Dependencies:
+
+bash
+Copy code
+flutter pub get
+Run the App:
+
+bash
+Copy code
+flutter run
+Enter GitHub Username:
+Open the app, and on the home screen, enter the GitHub username for which you want to retrieve information.
+
+Explore User Details:
+View detailed information about the specified GitHub user, including followers, following, bio, and a list of repositories.
+
+Technologies Used
+Flutter
+Dart
+GitHub API
+Screenshots
+
+
+Feedback and Contributions
+Your feedback is valuable! If you encounter issues or have suggestions for improvements, please open an issue.
+
+If you'd like to contribute to the project, feel free to submit a pull request. Contributions are always welcome!
