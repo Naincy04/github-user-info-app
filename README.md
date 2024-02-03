@@ -23,37 +23,4 @@ flutter pub get
 # Run the App
 flutter run
 
-Copy code
-git clone https://github.com/your-username/github-user-info-app.git
-Navigate to the Project:
 
-bash
-Copy code
-cd github-user-info-app
-Install Dependencies:
-
-bash
-Copy code
-flutter pub get
-Run the App:
-
-bash
-Copy code
-flutter run
-Enter GitHub Username:
-Open the app, and on the home screen, enter the GitHub username for which you want to retrieve information.
-
-Explore User Details:
-View detailed information about the specified GitHub user, including followers, following, bio, and a list of repositories.
-
-Technologies Used
-Flutter
-Dart
-GitHub API
-Screenshots
-
-
-Feedback and Contributions
-Your feedback is valuable! If you encounter issues or have suggestions for improvements, please open an issue.
-
-If you'd like to contribute to the project, feel free to submit a pull request. Contributions are always welcome!
