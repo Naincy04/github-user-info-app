@@ -8,7 +8,7 @@ GitHub User Info App is a Flutter-based mobile application that allows users to 
 - **Repository List:** View a comprehensive list of all repositories owned by the specified GitHub user.      
 
 ## Getting Started
-Follow these steps to get started with the GitHub User Info App:        
+Follow these steps to get started with the GitHub User Info App:                               
 
 ```bash
 # Clone the Repository
